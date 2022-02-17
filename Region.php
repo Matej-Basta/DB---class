@@ -55,4 +55,20 @@ class Region
             $this->update();
         }
     }
+
+    public function delete()
+    {
+
+        if (empty($this->id)) {
+            return false;
+        } else {
+            $query = "
+                DELETE
+                FROM `regions`
+                WHERE `id` = '{$this->id}'
+            ";
+
+            delete($query);
+        }
+    }
 }
