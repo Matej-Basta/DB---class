@@ -6,6 +6,7 @@ class Country
     public $code = null;
     public $code_alpha2 = null;
     public $name = null;
+    public $continent = null;
     public $continent_id = null;
     public $region = null;
     public $surface_area = null;

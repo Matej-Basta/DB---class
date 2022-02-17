@@ -9,12 +9,11 @@ $success = connect("localhost", "world", "root", "");
 // var_dump($success);
 
 $query = "
-    SELECT `cities`.*
-    FROM `cities`
-    WHERE `population` > 2000000
-    OR `country_id` = 2
+    SELECT `countries`.*
+    FROM `countries`
+    WHERE `population` > ?
 ";
 
-$result = select($query);
+$result = select($query, [200000000], "Country");
 
 var_dump($result);
