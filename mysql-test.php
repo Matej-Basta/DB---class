@@ -24,13 +24,17 @@ $success = connect("localhost", "world", "root", "");
 
 // var_dump($success);
 
-// $query = "
-//     SELECT `cities`.*
-//     FROM `cities`
-//     ORDER BY `cities`.`population` DESC
-//     LIMIT 100
-// ";
+$query = "
+    SELECT `cities`.*
+    FROM `cities`
+    WHERE `country_id` IN (?, ?, ?, ?)
+    ORDER BY `population` DESC
+    LIMIT 10
 
-$result = select($get_cities(5));
+";
 
+$result = select($query, [56, 199, 172, 98]);
+
+echo "<pre>";
 var_dump($result);
+echo "</pre>";
