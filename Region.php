@@ -30,4 +30,29 @@ class Region
 
         $this->id = $result[0]->id;
     }
+
+    public function update()
+    {
+        if (empty($this->id)) {
+            return false;
+        } else {
+            $query = "
+                UPDATE `regions`
+                SET `name` = '{$this->name}',
+                    `slug`= '{$this->slug}'
+                WHERE `id` = '{$this->id}'
+            ";
+
+            update($query);
+        }
+    }
+
+    public function save()
+    {
+        if (empty($this->id)) {
+            $this->insert();
+        } else {
+            $this->update();
+        }
+    }
 }
