@@ -8,10 +8,10 @@ $success = connect("localhost", "world", "root", "");
 
 $query = "
     UPDATE `cities`
-    SET `name` = ?
+    SET `population` = ?
     WHERE `id` = 3339
 ";
 
-$result = update($query, ["Prague"]);
+$result = update($query, ["1294513"]);
 
 var_dump($result);
