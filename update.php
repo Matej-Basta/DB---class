@@ -7,11 +7,12 @@ require_once "DB_functions.php";
 $success = connect("localhost", "world", "root", "");
 
 $query = "
-    UPDATE `cities`
-    SET `population` = ?
-    WHERE `id` = 3339
+    UPDATE `countries`
+    SET `population` = ?,
+        `GNP` = ?
+    WHERE `name` = 'United States Minor Outlying Islands'
 ";
 
-$result = update($query, ["1294513"]);
+$result = update($query, ['300', 13.91]);
 
 var_dump($result);
